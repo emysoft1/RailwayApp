@@ -1,0 +1,10 @@
+body{
+    background-color: #a7abaa;
+    padding: 0;
+    margin: 0;
+}
+
+.thead-dark{
+    background-color: #008374;
+    color: azure;
+}

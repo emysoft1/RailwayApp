@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="container py-5">
+
+    <h3 style='color:green'>Train Stations</h3>
+      List of Train Stations and locations
+      <hr>
+
+      <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+          <tr>
+          
+            <th scope="col">Station</th>
+            <th scope="col">Location</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          
+  
+          {% for object in object_list %}
+          <tr>
+            <th scope="row"> {{ object.name_of_station }}</th>
+            <td>{{ object.location  }}</td>
+          
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+
+
+</div>
+
+
+{% endblock content %}

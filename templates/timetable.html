@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container table-responsive py-5">
+
+    <h3>Train Timetables</h3>
+      Arrivals and Departure Schedules
+ 
+    
+      <hr>
+      
+    <table class="table table-bordered table-hover">
+      <thead class="thead-dark">
+        <tr>
+          
+          <th scope="col">Route</th>
+          <th scope="col">Train Name</th>
+          <th scope="col">Stop Station</th>
+          <th scope="col">Arrival Time</th>
+          <th scope="col">Departure Time</th>
+          <th scope="col">Price</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        
+
+        {% for object in object_list %}
+        <tr>
+          <th scope="row"> {{ object.route.source }} -- {{object.route.destination}} </th>
+          <td>{{ object.name_of_train }}</td>
+          <td>{{ object.station.name_of_station  }}</td>
+          <td>{{ object.arrival_time }}</td>
+          <td>{{ object.departure_time }}</td>
+          <td>{{ object.route.price }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <div class="d-grid gap-3 col-4 mx-auto">
+
+      <hr>
+   <a href = '{% url 'reservations' %}' class="btn btn-success"><h4 style='color:orange;'>Book Reservation</h4></a>
+
+    </div>
+
+
+    </div>
+  
+  
+
+    {% endblock content %} 
